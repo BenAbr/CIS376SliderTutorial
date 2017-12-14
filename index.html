@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!--
+Author: Ben Abroms
+DESC: Project W3Schools: Toggle Switch - 25 pts
+DATE: 12-13-17
+VERSION: 1.0
+BROWSERS SUPPORTED: Chrome
+-->
+<html>
+
+<head>
+  <title>Ben Abroms's Toggle Slider Tutorial</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+</head>
+
+<body>
+  <div id="title">
+    <h1>Welcome to the Toggle Slider Tutorial</h1>
+    <h4>By Ben Abroms</h4>
+  </div>
+  <div id="intro">
+    <h3>In this tutorial, we will learn how to make a toggleable slider that can switch from one side and display that it is on.</h3>
+    <label class="switch">
+  <input type="checkbox">
+  <span class="slider round"></span>
+</label>
+    <h3>The Toggleable Slider above is the one we will be creating for this tutorial.</h3>
+  </div>
+  <div id="tutorial">
+    <p>First, we will need to make a label with a class called "switch.</p>
+    <div id="displayCode">
+      <code>&ltlabel class="switch"&gt<br>
+        &ltinput type="checkbox"&gt<br>
+          10%&lt/div&gt<br>
+      &ltspan class="slider round"&gt&lt/span&gt&lt/label&gt
+      </div>
+      <p>We made a input type that's a checkbox and made a span class called "slider". Sliders are more noticeable than a basic checkbox.</p>
+      <div id="line"></div>
+      <p>Next, we'll need to make a style in CSS for the design of the Slider itself and the way it works.</p>
+      <div id="displayCode">
+        <code>.switch {<br>
+  position: relative;<br>
+  display: inline-block;<br>
+   width: 60px;<br>
+  height: 34px;<br>
+}<br>
+     <code>
+       .switch input {display:none;}<br>
+          </code>
+      </code>
+    </div>
+
+    <p>We set up two CSS effects. The first one is responsible for making the checkbox into a switch and the second one hides the default checkbox.</p>
+    <div id="line"></div>
+    <p>Now we need to make the slider "animate" by applying certain CSS properties.</p>
+    <div id="displayCode">
+      <code>.slider {<br>
+  position: absolute;<br>
+ cursor: pointer;<br>
+   top: 0;<br>
+  left: 0;<br>
+    right: 0;<br>
+      bottom: 0;<br>
+    background-color: #ccc;<br>
+      -webkit-transition: .4s;<br>
+      transition: .4s;<br>
+      }<br>
+    .slider:before {<br>
+  position: absolute;<br>
+          content: "";<br>
+          height: 26px;<br>
+  width: 26px;<br>
+  left: 4px;<br>
+  bottom: 4px;<br>
+  background-color: white;<br>
+  -webkit-transition: .4s;<br>
+  transition: .4s;<br>
+}<br>
+        input:checked + .slider {<br>
+  background-color: #2196F3;<br>
+}<br>
+
+input:focus + .slider {<br>
+  box-shadow: 0 0 1px #2196F3;<br>
+}<br>
+
+input:checked + .slider:before {<br>
+  -webkit-transform: translateX(26px);<br>
+  -ms-transform: translateX(26px);<br>
+  transform: translateX(26px);<br>
+}<br>
+
+.slider.round {<br>
+  border-radius: 34px;<br>
+}<br>
+
+.slider.round:before {<br>
+  border-radius: 50%;<br>
+}<br>
+        </code>
+    </div>
+    <p>This all looks complicated, but it's not. First, we had to design the slider itself such as where it is on the screen, the size, color, and we made a webkit transition property of .4 seconds. That controls the amount of time it takes to switch to
+      the on side. Second, we made show what the slider will be in its default state or off. Next, we use the "input:checked + .slider to change the background color after the toggle. This is the same case with the "input:focus + .slider except that controls
+      the box shadow. The The "input:checked + .slider:before allows the circle in the middle to move into the new position after it has been toggled. The last two are styled options that you don't have to do unless you want one with a rounded border
+      like the example at the top.</p>
+    <div id="line"></div>
+    <p>Here is the final result! Your brand new Toggleable Slider!</p>
+    <label class="switch">
+  <input type="checkbox">
+  <span class="slider round"></span>
+</label>
+  </div>
+  <div id="intro">
+    Have a Good Day!
+    </div>
+    <div id="line"></div>
+  </div>
+  </div>
+</body>
+</html>
